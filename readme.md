@@ -51,8 +51,8 @@ CMake 3.29 • Ninja 1.11
 
 ```bash
 # 0) Clone the repo and enter it
-$ git clone https://github.com/HCPhy/simple‑constprop.git
-$ cd simple‑constprop
+$ git clone https://github.com/HCPhy/redundant-phi.git
+$ cd redundant-phi
 
 # 1) Configure the project
 $ ./build.sh                # runs the cmake command below
