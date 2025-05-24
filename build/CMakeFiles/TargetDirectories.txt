@@ -1,0 +1,16 @@
+/Users/hanchenliu/Documents/GitHub/redundant-phi/build/CMakeFiles/intrinsics_gen.dir
+/Users/hanchenliu/Documents/GitHub/redundant-phi/build/CMakeFiles/vt_gen.dir
+/Users/hanchenliu/Documents/GitHub/redundant-phi/build/CMakeFiles/omp_gen.dir
+/Users/hanchenliu/Documents/GitHub/redundant-phi/build/CMakeFiles/acc_gen.dir
+/Users/hanchenliu/Documents/GitHub/redundant-phi/build/CMakeFiles/ARMTargetParserTableGen.dir
+/Users/hanchenliu/Documents/GitHub/redundant-phi/build/CMakeFiles/AArch64TargetParserTableGen.dir
+/Users/hanchenliu/Documents/GitHub/redundant-phi/build/CMakeFiles/RISCVTargetParserTableGen.dir
+/Users/hanchenliu/Documents/GitHub/redundant-phi/build/CMakeFiles/SimpleConstProp.dir
+/Users/hanchenliu/Documents/GitHub/redundant-phi/build/CMakeFiles/install-SimpleConstProp.dir
+/Users/hanchenliu/Documents/GitHub/redundant-phi/build/CMakeFiles/install-SimpleConstProp-stripped.dir
+/Users/hanchenliu/Documents/GitHub/redundant-phi/build/CMakeFiles/edit_cache.dir
+/Users/hanchenliu/Documents/GitHub/redundant-phi/build/CMakeFiles/rebuild_cache.dir
+/Users/hanchenliu/Documents/GitHub/redundant-phi/build/CMakeFiles/list_install_components.dir
+/Users/hanchenliu/Documents/GitHub/redundant-phi/build/CMakeFiles/install.dir
+/Users/hanchenliu/Documents/GitHub/redundant-phi/build/CMakeFiles/install/local.dir
+/Users/hanchenliu/Documents/GitHub/redundant-phi/build/CMakeFiles/install/strip.dir
