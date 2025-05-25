@@ -42,6 +42,7 @@ struct SimpleConstPropPass : public PassInfoMixin<SimpleConstPropPass> {
         // x + 0  -> x   ;  0 + x -> x
         // x * 1  -> x   ;  1 * x -> x
         Value *X;
+        
         if (match(&I, m_Add(m_Value(X), m_Zero())) ||
             match(&I, m_Add(m_Zero(), m_Value(X))) ||
             match(&I, m_Mul(m_Value(X), m_One())) ||
@@ -58,6 +59,8 @@ struct SimpleConstPropPass : public PassInfoMixin<SimpleConstPropPass> {
       Dead->eraseFromParent();
 
     // --- 2. Remove redundant phi‑nodes --------------------------------
+
+    
     for (BasicBlock &BB : F) {
       if (auto *PN = dyn_cast<PHINode>(BB.begin())) {
         // Only look at *simple* case: first instruction and all incoming
