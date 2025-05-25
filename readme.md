@@ -90,14 +90,29 @@ EOF
 # 2. Lower to LLVM IR **without optnone** so passes can run
 clang -O0 -Xclang -disable-O0-optnone -emit-llvm -S test.c -o test.ll
 
-# 3. Run the plug‑in (and show IR on stdout)
+# 3. Promote allocas to SSA form; you'll see phi-nodes instead of loads/stores
+opt -passes='mem2reg' -S test.ll -o mem2reg.ll
+
+# 4a. Run the SimpleConstProp plug-in on the raw IR
 /opt/homebrew/opt/llvm/bin/opt \
     -load-pass-plugin ./build/SimpleConstProp.dylib \
     -passes='simple-constprop' \
-    -S test.ll -o out.ll
+    -S test.ll -o out_raw.ll
 
-# 4. Inspect the diff – the add/mul should vanish
-diff -u test.ll out.ll | less
+# 4b. Run the plug-in on the SSA IR produced by mem2reg
+
+/opt/homebrew/opt/llvm/bin/opt \
+    -load-pass-plugin ./build/SimpleConstProp.dylib \
+    -passes='simple-constprop' \
+    -S mem2reg.ll -o out_ssa.ll
+
+
+
+# 5. Inspect the diffs – the redundant add/mul instructions should be gone
+diff -u test.ll     out_raw.ll | less
+diff -u mem2reg.ll  out_ssa.ll | less
+
+
 ```
 
 A similar diff appears if you compile with `-O1` (LLVM will introduce SSA & ϕs for you).
